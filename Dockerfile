@@ -1,6 +1,6 @@
 FROM java:8-jdk
 
-ARG MESOS_VERSION=0.28.2-2.0.27.debian81
+ARG MESOS_VERSION=1.0.1-2.0.93.debian81
 
 RUN apt-get update && \
   apt-get install --no-install-recommends -y apt-transport-https ca-certificates curl
