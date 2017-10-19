@@ -5,11 +5,11 @@ ARG MESOS_VERSION=0.28.1-2.0.20.ubuntu1404
 RUN apt-get update && \
   apt-get install --no-install-recommends -y apt-transport-https ca-certificates curl && \
   apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
-  echo deb https://apt.dockerproject.org/repo jessie main > /etc/apt/sources.list.d/docker.list && \
+  echo deb https://apt.dockerproject.org/repo debian main > /etc/apt/sources.list.d/docker.list && \
   apt-get update && \
   apt-get -y install docker-engine
 
-RUN echo "deb http://repos.mesosphere.com/ubuntu ubuntu-jessie main" > /etc/apt/sources.list.d/mesosphere.list && \
+RUN echo "deb http://repos.mesosphere.com/ubuntu ubuntu main" > /etc/apt/sources.list.d/mesosphere.list && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
   apt-get -y update && \
   apt-get -y install curl mesos=${MESOS_VERSION} && \
